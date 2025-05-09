@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team FourTen 야유회 초대장</title>
+
+  <!-- Tailwind & lucide -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    html,body{margin:0;padding:0;font-family:'Inter',sans-serif;scroll-behavior:smooth;background:#f9fbfd;}
+    /* 구간 진입 애니메이션 */
+    .fade{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+    .fade.show{opacity:1;transform:translateY(0);}
+    /* 스냅 & 오프셋 */
+    .snap{scroll-snap-align:start;scroll-margin-top:76px;} /* 헤더 높이+여유 */
+    /* 타임라인 vertical bar */
+    .tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:#38bdf8;}
+  </style>
+</head>
+<body class="text-slate-800 pb-40 snap-y snap-mandatory overflow-y-scroll">
+
+  <!-- ── 모바일이 아닐 때만 보이는 안내 오버레이 ──────────────────── -->
+  <div id="mobile-only" class="hidden fixed inset-0 bg-white flex flex-col items-center justify-center text-center z-50">
+    <img src="https://i.ibb.co/4g8Hmp2Z/teamlogo-3-1.png" alt="Team FourTen 로고" class="h-16 mb-4" />
+    <p class="text-lg font-semibold text-slate-700">📱 모바일에서 확인해주세요</p>
+  </div>
+
+  <!-- 헤더 -->
+  <header id="topbar" class="sticky top-0 z-20 bg-white/70 backdrop-blur shadow-sm py-2 flex justify-center">
+    <img src="https://i.ibb.co/4g8Hmp2Z/teamlogo-3-1.png" alt="Team FourTen 로고" class="h-10 object-contain" />
+  </header>
+
+  <!-- HERO ------------------------------------------------------------- -->
+  <section id="hero" class="snap min-h-[90vh] relative overflow-hidden flex items-center justify-center fade">
+    <img src="https://i.ibb.co/R4JKX6yV/image.png" alt="야유회 사진" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-b from-sky-900/60 via-sky-800/30 to-sky-700/10"></div>
+
+    <div class="relative z-10 text-center px-6">
+      <h1 class="text-3xl font-bold text-white drop-shadow">Team FourTen&nbsp;야유회</h1>
+      <p class="text-white/90 text-sm mt-2 leading-relaxed">
+        우리가 다시 <b>포텐</b>이 된 후 처음 맞는 여름입니다.<br>
+        이&nbsp;여름을 추억으로 남기고자 야유회를 떠납니다!
+      </p>
+      <p class="text-white/90 text-sm mt-3">&nbsp;</p>
+    </div>
+  </section>
+
+  <!-- INFO ------------------------------------------------------------- -->
+  <section id="info" class="snap min-h-[90vh] px-6 py-14 fade flex flex-col justify-center">
+    <h2 class="text-xl font-bold text-sky-700 mb-8">일정 & 장소</h2>
+    <div class="space-y-6">
+      <div class="flex items-start gap-3">
+        <i data-lucide="calendar" class="w-5 h-5 text-sky-500 mt-1"></i>
+        <div>
+          <p class="font-semibold text-slate-700">2025년 여름이 끝나기 전 주말 · 1박 2일</p>
+          <p class="text-xs text-slate-500">토요일 AM 10:00 집결 예정</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-3">
+        <i data-lucide="map-pin" class="w-5 h-5 text-sky-500 mt-1"></i>
+        <div>
+          <p class="font-semibold text-slate-700">장소는 곧 공개됩니다</p>
+          <a href="https://map.naver.com/" class="text-sky-600 underline text-xs">미리 보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT TIMELINE --------------------------------------------------- -->
+  <section id="event" class="snap min-h-[90vh] relative px-8 py-14 fade flex flex-col justify-center">
+    <h2 class="text-xl font-bold text-sky-700 mb-12">이벤트 라인업</h2>
+    <div class="relative pl-6 tl space-y-12">
+      <div class="relative">
+        <span class="absolute -left-3 top-1 w-3 h-3 rounded-full bg-sky-500"></span>
+        <h3 class="font-semibold text-sky-800">볼링 미션 챌린지</h3>
+        <p class="text-sm mt-1">
+          왼손 스트라이크? 한발 스윙? <br>
+          <b>당일 공개</b>되는 기묘한 미션!<br>
+          참가자 전원 기념품 증정 🎁
+        </p>
+      </div>
+      <div class="relative">
+        <span class="absolute -left-3 top-1 w-3 h-3 rounded-full bg-sky-500"></span>
+        <h3 class="font-semibold text-sky-800">조별 퀴즈 대항전</h3>
+        <p class="text-sm mt-1">
+          순발력·작전이 필요한 <b>조별 점수전</b>!<br>
+          승리 팀에 하이볼 텀블러 🥇
+        </p>
+      </div>
+      <div class="relative">
+        <span class="absolute -left-3 top-1 w-3 h-3 rounded-full bg-sky-500"></span>
+        <h3 class="font-semibold text-sky-800">타임캡슐 개봉</h3>
+        <p class="text-sm mt-1">과거의 나에게 보내는 편지를 꺼내며 추억 소환</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRINK PARTY ------------------------------------------------------ -->
+  <section id="drink" class="snap min-h-[90vh] px-6 py-14 fade bg-sky-50/60 backdrop-blur flex flex-col justify-center text-center">
+    <div class="max-w-md mx-auto">
+      <h2 class="text-2xl font-bold text-sky-800 mb-5">한성일 유흥부장과 함께하는 전설의 음주파티!</h2>
+      <img src="https://i.postimg.cc/t4K1rVvB/image.jpg" alt="웨이터 박쥐" class="rounded-xl shadow mb-5" />
+      <p class="text-sm leading-relaxed text-slate-700">
+        당신의 지친 일상을 날려버릴 <b>전설적인 자리</b>가 열립니다!<br>
+        유흥계의 살아있는 전설&nbsp;<b>한성일 유흥부장</b>이 직접 기획·주도하는 미친&nbsp;음주&nbsp;TIME 🍺<br>
+        한 번 들어오면 나갈 수 없는 환상의 세계(에버랜드 아님)로 초대합니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- QNA -------------------------------------------------------------- -->
+  <section id="qna" class="snap min-h-[90vh] px-6 py-14 fade flex flex-col justify-center">
+    <h2 class="text-xl font-bold text-sky-700 mb-8">자주 묻는 질문</h2>
+    <div class="divide-y divide-slate-200 bg-white/50 backdrop-blur rounded-xl shadow">
+      <details class="group p-4">
+        <summary class="cursor-pointer flex items-center justify-between font-medium text-slate-700">
+          <span>술을 못 마시면 음주파티 때 어떻게 하나요?</span>
+          <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-open:rotate-180"></i>
+        </summary>
+        <p class="pt-3 text-sm text-slate-600">주도가 무엇인지 몸소 배우게 됩니다.</p>
+      </details>
+      <details class="group p-4">
+        <summary class="cursor-pointer flex items-center justify-between font-medium text-slate-700">
+          <span>밤새 놀면 체력이 걱정돼요.</span>
+          <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-open:rotate-180"></i>
+        </summary>
+        <p class="pt-3 text-sm text-slate-600">낮잠 타임과 아침 해장국이 준비됩니다.</p>
+      </details>
+      <details class="group p-4">
+        <summary class="cursor-pointer flex items-center justify-between font-medium text-slate-700">
+          <span>비가 오면 어떻게 되나요?</span>
+          <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-open:rotate-180"></i>
+        </summary>
+        <p class="pt-3 text-sm text-slate-600">실내 볼링 & 보드게임 파티로 전환됩니다.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CONTACT ---------------------------------------------------------- -->
+  <section id="contact" class="snap min-h-[60vh] px-6 py-14 fade text-center flex flex-col justify-center">
+    <h2 class="text-xl font-bold text-sky-700 mb-4">문의</h2>
+    <p class="text-sm leading-relaxed">
+      궁금한 점이 있으면 운영진에게<br>
+      <a href="https://open.kakao.com/o/sZdjKPyd" class="inline-flex items-center gap-1 text-sky-600 font-medium underline">
+        <i data-lucide="message-circle" class="w-4 h-4"></i>카카오톡 오픈채팅으로 연락하세요
+      </a>
+    </p>
+  </section>
+
+  <!-- FOOTER ----------------------------------------------------------- -->
+  <footer class="text-center text-xs text-slate-400 py-8 fade">
+    ⓒ Team FourTen · All Rights Reserved
+  </footer>
+
+  <!-- BOTTOM NAV ------------------------------------------------------- -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur border-t shadow z-30">
+    <div class="flex justify-around py-3 text-xs text-slate-600">
+      <a onclick="goTo('hero')"    class="flex flex-col items-center hover:text-sky-700"><i data-lucide="home"           class="w-5 h-5"></i><span class="mt-0.5">홈</span></a>
+      <a onclick="goTo('info')"    class="flex flex-col items-center hover:text-sky-700"><i data-lucide="calendar"       class="w-5 h-5"></i><span class="mt-0.5">일정</span></a>
+      <a onclick="goTo('event')"   class="flex flex-col items-center hover:text-sky-700"><i data-lucide="sparkles"       class="w-5 h-5"></i><span class="mt-0.5">이벤트</span></a>
+      <a onclick="goTo('drink')"   class="flex flex-col items-center hover:text-sky-700"><i data-lucide="beer"           class="w-5 h-5"></i><span class="mt-0.5">음주</span></a>
+      <a onclick="goTo('qna')"     class="flex flex-col items-center hover:text-sky-700"><i data-lucide="help-circle"    class="w-5 h-5"></i><span class="mt-0.5">Q&A</span></a>
+      <a onclick="goTo('contact')" class="flex flex-col items-center hover:text-sky-700"><i data-lucide="send"           class="w-5 h-5"></i><span class="mt-0.5">문의</span></a>
+    </div>
+  </nav>
+
+  <!-- JS --------------------------------------------------------------- -->
+  <script>
+    /* 모바일 여부 체크 & 오버레이 처리 */
+    document.addEventListener('DOMContentLoaded', () => {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (!isMobile) {
+        // 모바일이 아니라면: 오버레이 보여 주고 나머지 숨김
+        document.getElementById('mobile-only').classList.remove('hidden');
+        document.querySelectorAll('body > *:not(#mobile-only)').forEach(el => {
+          if (el.id !== 'mobile-only') el.style.display = 'none';
+        });
+        return;     // 더 이상 초기화 안함
+      }
+
+      /* 모바일인 경우에만 아래 로직 실행 */
+      document.querySelectorAll('.fade').forEach((el, i) =>
+        setTimeout(() => el.classList.add('show'), i * 120)
+      );
+      lucide.createIcons();
+    });
+
+    /* 부드러운 스크롤 + 헤더 오프셋 */
+    function goTo(sectionId) {
+      const topbar = document.getElementById('topbar');
+      const extra  = -16;                                  // 살짝 위쪽 여유
+      const offset = (topbar ? topbar.offsetHeight : 0) + extra;
+
+      const target = document.getElementById(sectionId);
+      if (!target) return;
+
+      const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
