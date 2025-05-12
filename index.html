@@ -5,22 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Team FourTen 야유회 초대장</title>
 
-  <!-- Tailwind & lucide -->
+  <!-- Tailwind CSS + lucide icon -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
     html,body{margin:0;padding:0;font-family:'Inter',sans-serif;scroll-behavior:smooth;background:#f9fbfd;}
+    /* 섹션 페이드‑인 */
     .fade{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
     .fade.show{opacity:1;transform:translateY(0);}
+    /* 스냅 & 헤더 오프셋 */
     .snap{scroll-snap-align:start;scroll-margin-top:76px;}
+    /* 타임라인 vertical bar */
     .tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:#38bdf8;}
+
+    /* ── HERO 배경이 왼쪽으로 흐르는 애니메이션 ─────────────── */
+    @keyframes heroPan{
+      0%   {background-position-x:0;}
+      100% {background-position-x:-100vw;} /* 한 화면 폭 만큼 이동 */
+    }
+    .hero-pan{
+      background-size:cover;
+      background-repeat:repeat-x;
+      animation:heroPan 40s linear infinite; /* 속도는 40초 한 바퀴 */
+    }
   </style>
 </head>
 <body class="text-slate-800 pb-40 snap-y snap-mandatory overflow-y-scroll">
 
-  <!-- 모바일 안내 오버레이 -->
+  <!-- 모바일이 아닐 때만 보이는 안내 -->
   <div id="mobile-only" class="hidden fixed inset-0 bg-white flex flex-col items-center justify-center text-center z-50">
     <img src="https://i.ibb.co/4g8Hmp2Z/teamlogo-3-1.png" alt="Team FourTen 로고" class="h-16 mb-4" />
     <p class="text-lg font-semibold text-slate-700">모바일에서 확인해주세요</p>
@@ -31,15 +45,16 @@
     <img src="https://i.ibb.co/4g8Hmp2Z/teamlogo-3-1.png" alt="Team FourTen 로고" class="h-10 object-contain" />
   </header>
 
-  <!-- HERO -->
-  <section id="hero" class="snap min-h-[90vh] relative overflow-hidden flex items-center justify-center fade">
-    <img src="https://i.ibb.co/R4JKX6yV/image.png" alt="야유회 사진" class="absolute inset-0 w-full h-full object-cover" />
+  <!-- HERO (패닝 배경) -->
+  <section id="hero"
+           class="snap min-h-[90vh] relative flex items-center justify-center fade hero-pan"
+           style="background-image:url('https://i.ibb.co/R4JKX6yV/image.png');">
     <div class="absolute inset-0 bg-gradient-to-b from-sky-900/60 via-sky-800/30 to-sky-700/10"></div>
     <div class="relative z-10 text-center px-6">
-      <h1 class="text-3xl font-bold text-white drop-shadow">Team FourTen 야유회</h1>
+      <h1 class="text-3xl font-bold text-white drop-shadow">Team FourTen 야유회</h1>
       <p class="text-white/90 text-sm mt-2 leading-relaxed">
         우리가 다시 <strong>포텐</strong>이 된 후 처음 맞는 여름입니다.<br>
-        이 여름을 추억으로 남기고자 야유회를 떠납니다!
+        이 여름을 추억으로 남기고자 야유회를 떠납니다!
       </p>
     </div>
   </section>
